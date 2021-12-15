@@ -1,0 +1,12 @@
+services:
+  app:
+    build: ./
+    container_name: hero
+    volumes:
+      - ./:/var/www/app
+      - /app/node_modules/
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+    command: sh -c 'npm i && npm start'
